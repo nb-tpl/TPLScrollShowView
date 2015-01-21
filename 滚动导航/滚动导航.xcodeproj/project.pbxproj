@@ -1,0 +1,513 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3B3C127F1A64D7C200E767CF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B3C127E1A64D7C200E767CF /* Foundation.framework */; };
+		3B3C12811A64D7C200E767CF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B3C12801A64D7C200E767CF /* CoreGraphics.framework */; };
+		3B3C12831A64D7C200E767CF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B3C12821A64D7C200E767CF /* UIKit.framework */; };
+		3B3C12891A64D7C200E767CF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3B3C12871A64D7C200E767CF /* InfoPlist.strings */; };
+		3B3C128B1A64D7C200E767CF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B3C128A1A64D7C200E767CF /* main.m */; };
+		3B3C128F1A64D7C200E767CF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B3C128E1A64D7C200E767CF /* AppDelegate.m */; };
+		3B3C12921A64D7C200E767CF /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B3C12901A64D7C200E767CF /* Main_iPhone.storyboard */; };
+		3B3C12951A64D7C200E767CF /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B3C12931A64D7C200E767CF /* Main_iPad.storyboard */; };
+		3B3C12981A64D7C200E767CF /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B3C12971A64D7C200E767CF /* ViewController.m */; };
+		3B3C129A1A64D7C200E767CF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B3C12991A64D7C200E767CF /* Images.xcassets */; };
+		3B3C12A11A64D7C200E767CF /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B3C12A01A64D7C200E767CF /* XCTest.framework */; };
+		3B3C12A21A64D7C200E767CF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B3C127E1A64D7C200E767CF /* Foundation.framework */; };
+		3B3C12A31A64D7C200E767CF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B3C12821A64D7C200E767CF /* UIKit.framework */; };
+		3B3C12AB1A64D7C200E767CF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3B3C12A91A64D7C200E767CF /* InfoPlist.strings */; };
+		3B3C12AD1A64D7C200E767CF /* ____Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B3C12AC1A64D7C200E767CF /* ____Tests.m */; };
+		3B50C7A01A6FAEEB00D80E20 /* TPLAutoChangeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B50C79B1A6FAEEB00D80E20 /* TPLAutoChangeView.m */; };
+		3B50C7A11A6FAEEB00D80E20 /* TPLHelpTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B50C79D1A6FAEEB00D80E20 /* TPLHelpTool.m */; };
+		3B50C7A21A6FAEEB00D80E20 /* TPLScrollShowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B50C79F1A6FAEEB00D80E20 /* TPLScrollShowView.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3B3C12A41A64D7C200E767CF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3B3C12731A64D7C200E767CF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3B3C127A1A64D7C200E767CF;
+			remoteInfo = "滚动导航";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		3B3C127B1A64D7C200E767CF /* 滚动导航.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "滚动导航.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3B3C127E1A64D7C200E767CF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		3B3C12801A64D7C200E767CF /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		3B3C12821A64D7C200E767CF /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		3B3C12861A64D7C200E767CF /* 滚动导航-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "滚动导航-Info.plist"; sourceTree = "<group>"; };
+		3B3C12881A64D7C200E767CF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		3B3C128A1A64D7C200E767CF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		3B3C128C1A64D7C200E767CF /* 滚动导航-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "滚动导航-Prefix.pch"; sourceTree = "<group>"; };
+		3B3C128D1A64D7C200E767CF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		3B3C128E1A64D7C200E767CF /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		3B3C12911A64D7C200E767CF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
+		3B3C12941A64D7C200E767CF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
+		3B3C12961A64D7C200E767CF /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		3B3C12971A64D7C200E767CF /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		3B3C12991A64D7C200E767CF /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		3B3C129F1A64D7C200E767CF /* 滚动导航Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "滚动导航Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3B3C12A01A64D7C200E767CF /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		3B3C12A81A64D7C200E767CF /* 滚动导航Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "滚动导航Tests-Info.plist"; sourceTree = "<group>"; };
+		3B3C12AA1A64D7C200E767CF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		3B3C12AC1A64D7C200E767CF /* ____Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "____Tests.m"; sourceTree = "<group>"; };
+		3B50C79A1A6FAEEB00D80E20 /* TPLAutoChangeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPLAutoChangeView.h; sourceTree = "<group>"; };
+		3B50C79B1A6FAEEB00D80E20 /* TPLAutoChangeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPLAutoChangeView.m; sourceTree = "<group>"; };
+		3B50C79C1A6FAEEB00D80E20 /* TPLHelpTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPLHelpTool.h; sourceTree = "<group>"; };
+		3B50C79D1A6FAEEB00D80E20 /* TPLHelpTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPLHelpTool.m; sourceTree = "<group>"; };
+		3B50C79E1A6FAEEB00D80E20 /* TPLScrollShowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPLScrollShowView.h; sourceTree = "<group>"; };
+		3B50C79F1A6FAEEB00D80E20 /* TPLScrollShowView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPLScrollShowView.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3B3C12781A64D7C200E767CF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3B3C12811A64D7C200E767CF /* CoreGraphics.framework in Frameworks */,
+				3B3C12831A64D7C200E767CF /* UIKit.framework in Frameworks */,
+				3B3C127F1A64D7C200E767CF /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3B3C129C1A64D7C200E767CF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3B3C12A11A64D7C200E767CF /* XCTest.framework in Frameworks */,
+				3B3C12A31A64D7C200E767CF /* UIKit.framework in Frameworks */,
+				3B3C12A21A64D7C200E767CF /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3B3C12721A64D7C200E767CF = {
+			isa = PBXGroup;
+			children = (
+				3B3C12841A64D7C200E767CF /* 滚动导航 */,
+				3B3C12A61A64D7C200E767CF /* 滚动导航Tests */,
+				3B3C127D1A64D7C200E767CF /* Frameworks */,
+				3B3C127C1A64D7C200E767CF /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3B3C127C1A64D7C200E767CF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3B3C127B1A64D7C200E767CF /* 滚动导航.app */,
+				3B3C129F1A64D7C200E767CF /* 滚动导航Tests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3B3C127D1A64D7C200E767CF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3B3C127E1A64D7C200E767CF /* Foundation.framework */,
+				3B3C12801A64D7C200E767CF /* CoreGraphics.framework */,
+				3B3C12821A64D7C200E767CF /* UIKit.framework */,
+				3B3C12A01A64D7C200E767CF /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3B3C12841A64D7C200E767CF /* 滚动导航 */ = {
+			isa = PBXGroup;
+			children = (
+				3B50C7991A6FAEEB00D80E20 /* TPLScrollShowView */,
+				3B3C128D1A64D7C200E767CF /* AppDelegate.h */,
+				3B3C128E1A64D7C200E767CF /* AppDelegate.m */,
+				3B3C12901A64D7C200E767CF /* Main_iPhone.storyboard */,
+				3B3C12931A64D7C200E767CF /* Main_iPad.storyboard */,
+				3B3C12961A64D7C200E767CF /* ViewController.h */,
+				3B3C12971A64D7C200E767CF /* ViewController.m */,
+				3B3C12991A64D7C200E767CF /* Images.xcassets */,
+				3B3C12851A64D7C200E767CF /* Supporting Files */,
+			);
+			path = "滚动导航";
+			sourceTree = "<group>";
+		};
+		3B3C12851A64D7C200E767CF /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3B3C12861A64D7C200E767CF /* 滚动导航-Info.plist */,
+				3B3C12871A64D7C200E767CF /* InfoPlist.strings */,
+				3B3C128A1A64D7C200E767CF /* main.m */,
+				3B3C128C1A64D7C200E767CF /* 滚动导航-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3B3C12A61A64D7C200E767CF /* 滚动导航Tests */ = {
+			isa = PBXGroup;
+			children = (
+				3B3C12AC1A64D7C200E767CF /* ____Tests.m */,
+				3B3C12A71A64D7C200E767CF /* Supporting Files */,
+			);
+			path = "滚动导航Tests";
+			sourceTree = "<group>";
+		};
+		3B3C12A71A64D7C200E767CF /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3B3C12A81A64D7C200E767CF /* 滚动导航Tests-Info.plist */,
+				3B3C12A91A64D7C200E767CF /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3B50C7991A6FAEEB00D80E20 /* TPLScrollShowView */ = {
+			isa = PBXGroup;
+			children = (
+				3B50C79A1A6FAEEB00D80E20 /* TPLAutoChangeView.h */,
+				3B50C79B1A6FAEEB00D80E20 /* TPLAutoChangeView.m */,
+				3B50C79C1A6FAEEB00D80E20 /* TPLHelpTool.h */,
+				3B50C79D1A6FAEEB00D80E20 /* TPLHelpTool.m */,
+				3B50C79E1A6FAEEB00D80E20 /* TPLScrollShowView.h */,
+				3B50C79F1A6FAEEB00D80E20 /* TPLScrollShowView.m */,
+			);
+			path = TPLScrollShowView;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3B3C127A1A64D7C200E767CF /* 滚动导航 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3B3C12B01A64D7C200E767CF /* Build configuration list for PBXNativeTarget "滚动导航" */;
+			buildPhases = (
+				3B3C12771A64D7C200E767CF /* Sources */,
+				3B3C12781A64D7C200E767CF /* Frameworks */,
+				3B3C12791A64D7C200E767CF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "滚动导航";
+			productName = "滚动导航";
+			productReference = 3B3C127B1A64D7C200E767CF /* 滚动导航.app */;
+			productType = "com.apple.product-type.application";
+		};
+		3B3C129E1A64D7C200E767CF /* 滚动导航Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3B3C12B31A64D7C200E767CF /* Build configuration list for PBXNativeTarget "滚动导航Tests" */;
+			buildPhases = (
+				3B3C129B1A64D7C200E767CF /* Sources */,
+				3B3C129C1A64D7C200E767CF /* Frameworks */,
+				3B3C129D1A64D7C200E767CF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3B3C12A51A64D7C200E767CF /* PBXTargetDependency */,
+			);
+			name = "滚动导航Tests";
+			productName = "滚动导航Tests";
+			productReference = 3B3C129F1A64D7C200E767CF /* 滚动导航Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3B3C12731A64D7C200E767CF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "谭鄱仑";
+				TargetAttributes = {
+					3B3C129E1A64D7C200E767CF = {
+						TestTargetID = 3B3C127A1A64D7C200E767CF;
+					};
+				};
+			};
+			buildConfigurationList = 3B3C12761A64D7C200E767CF /* Build configuration list for PBXProject "滚动导航" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 3B3C12721A64D7C200E767CF;
+			productRefGroup = 3B3C127C1A64D7C200E767CF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3B3C127A1A64D7C200E767CF /* 滚动导航 */,
+				3B3C129E1A64D7C200E767CF /* 滚动导航Tests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3B3C12791A64D7C200E767CF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3B3C12951A64D7C200E767CF /* Main_iPad.storyboard in Resources */,
+				3B3C129A1A64D7C200E767CF /* Images.xcassets in Resources */,
+				3B3C12921A64D7C200E767CF /* Main_iPhone.storyboard in Resources */,
+				3B3C12891A64D7C200E767CF /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3B3C129D1A64D7C200E767CF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3B3C12AB1A64D7C200E767CF /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3B3C12771A64D7C200E767CF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3B50C7A01A6FAEEB00D80E20 /* TPLAutoChangeView.m in Sources */,
+				3B3C12981A64D7C200E767CF /* ViewController.m in Sources */,
+				3B3C128F1A64D7C200E767CF /* AppDelegate.m in Sources */,
+				3B50C7A11A6FAEEB00D80E20 /* TPLHelpTool.m in Sources */,
+				3B3C128B1A64D7C200E767CF /* main.m in Sources */,
+				3B50C7A21A6FAEEB00D80E20 /* TPLScrollShowView.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3B3C129B1A64D7C200E767CF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3B3C12AD1A64D7C200E767CF /* ____Tests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3B3C12A51A64D7C200E767CF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3B3C127A1A64D7C200E767CF /* 滚动导航 */;
+			targetProxy = 3B3C12A41A64D7C200E767CF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		3B3C12871A64D7C200E767CF /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3B3C12881A64D7C200E767CF /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		3B3C12901A64D7C200E767CF /* Main_iPhone.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3B3C12911A64D7C200E767CF /* Base */,
+			);
+			name = Main_iPhone.storyboard;
+			sourceTree = "<group>";
+		};
+		3B3C12931A64D7C200E767CF /* Main_iPad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3B3C12941A64D7C200E767CF /* Base */,
+			);
+			name = Main_iPad.storyboard;
+			sourceTree = "<group>";
+		};
+		3B3C12A91A64D7C200E767CF /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3B3C12AA1A64D7C200E767CF /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3B3C12AE1A64D7C200E767CF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		3B3C12AF1A64D7C200E767CF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3B3C12B11A64D7C200E767CF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "滚动导航/滚动导航-Prefix.pch";
+				INFOPLIST_FILE = "滚动导航/滚动导航-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		3B3C12B21A64D7C200E767CF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "滚动导航/滚动导航-Prefix.pch";
+				INFOPLIST_FILE = "滚动导航/滚动导航-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		3B3C12B41A64D7C200E767CF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/滚动导航.app/滚动导航";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "滚动导航/滚动导航-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "滚动导航Tests/滚动导航Tests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		3B3C12B51A64D7C200E767CF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/滚动导航.app/滚动导航";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "滚动导航/滚动导航-Prefix.pch";
+				INFOPLIST_FILE = "滚动导航Tests/滚动导航Tests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3B3C12761A64D7C200E767CF /* Build configuration list for PBXProject "滚动导航" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3B3C12AE1A64D7C200E767CF /* Debug */,
+				3B3C12AF1A64D7C200E767CF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3B3C12B01A64D7C200E767CF /* Build configuration list for PBXNativeTarget "滚动导航" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3B3C12B11A64D7C200E767CF /* Debug */,
+				3B3C12B21A64D7C200E767CF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3B3C12B31A64D7C200E767CF /* Build configuration list for PBXNativeTarget "滚动导航Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3B3C12B41A64D7C200E767CF /* Debug */,
+				3B3C12B51A64D7C200E767CF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3B3C12731A64D7C200E767CF /* Project object */;
+}
