@@ -8,20 +8,154 @@
 
 #import "TPLScrollShowView.h"
 
-#import "TPLAutoChangeView.h"
-#import "TPLHelpTool.h"
+//#import "TPLAutoChangeView.h"
+//#import "TPLHelpTool.h"
 
 
 
+#pragma mark
+#pragma mark           TPLAutoChangeView
+#pragma mark
+@implementation TPLAutoChangeView
+@synthesize horizontalShouldScroll = _horizontalShouldScroll,verticalShouldScroll = _verticalShouldScroll;
+@synthesize fitFrame = _fitFrame;
+#pragma mark
+#pragma mark---------------property
+//竖直是否初始能滑动
+-(void)setVerticalShouldScroll:(BOOL)verticalShouldScroll
+{
+    _verticalShouldScroll = verticalShouldScroll;
+    if (_verticalShouldScroll)
+    {
+        if (self.frame.size.height >= self.contentSize.height)
+        {
+            self.contentSize = CGSizeMake(self.contentSize.width, self.frame.size.height + 1);
+        }
+    }
+}
+//水平是否初始能滑动
+-(void)setHorizontalShouldScroll:(BOOL)horizontalShouldScroll
+{
+    _horizontalShouldScroll = horizontalShouldScroll;
+    if (_horizontalShouldScroll)
+    {
+        if (self.frame.size.width >= self.contentSize.width)
+        {
+            self.contentSize = CGSizeMake(self.frame.size.width + 1, self.contentSize.height);
+        }
+    }
+}
+
+- (id)initWithFrame:(CGRect)frame
+{
+    self = [super initWithFrame:frame];
+    if (self) {
+        // Initialization code
+        self.userInteractionEnabled = YES;
+        _verticalShouldScroll = NO;
+        _horizontalShouldScroll = NO;
+        _fitFrame = NO;
+    }
+    return self;
+}
+
+
+//改变自己的滑动范围
+-(void)addSubview:(UIView *)view
+{
+    //水平扩充和恢复
+    if ((view.frame.origin.x + view.frame.size.width) > self.contentSize.width)
+    {
+        self.contentSize = CGSizeMake(view.frame.origin.x + view.frame.size.width, self.contentSize.height);
+    }
+    else
+    {
+        if (_fitFrame)
+        {
+            if (_horizontalShouldScroll)
+            {
+                self.contentSize = CGSizeMake(self.frame.size.width + 1, self.contentSize.height);
+            }
+            else
+            {
+                self.contentSize = CGSizeMake(self.frame.size.width, self.contentSize.height);
+            }
+        }
+    }
+    //垂直扩充和恢复
+    if((view.frame.origin.y + view.frame.size.height) > self.contentSize.height ||(view.frame.origin.y + view.frame.size.height) > self.frame.size.height)
+    {
+        self.contentSize = CGSizeMake(self.contentSize.width, view.frame.origin.y + view.frame.size.height);
+    }
+    else
+    {
+        if (_fitFrame)
+        {
+            if (_verticalShouldScroll)
+            {
+                self.contentSize = CGSizeMake(self.contentSize.width, self.frame.size.height + 1);
+            }
+            else
+            {
+                self.contentSize = CGSizeMake(self.contentSize.width, self.frame.size.height);
+            }
+        }
+    }
+    [super addSubview:view];
+}
+
+
+
+#pragma mark
+#pragma mark---------------Function
+-(void)addFrameFromSize:(CGSize)size
+{
+    self.frame = CGRectMake(self.frame.origin.x, self.frame.origin.y, self.frame.size.width + size.width, self.frame.size.height + size.height);
+}
+
+
+/*
+ // Only override drawRect: if you perform custom drawing.
+ // An empty implementation adversely affects performance during animation.
+ - (void)drawRect:(CGRect)rect
+ {
+ // Drawing code
+ }
+ */
+
+
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    [super touchesBegan:touches withEvent:event];
+}
+
+-(void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    [super touchesMoved:touches withEvent:event];
+}
+
+-(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    [super touchesEnded:touches withEvent:event];
+}
+
+
+@end
+
+#pragma mark
+#pragma mark           TPLScrollShowView
+#pragma mark
 
 #define title_xSpace_default 10
 #define dealocInfo NSLog(@"%@ 释放了",[self class])
 
 //mainView
+#define TitlesBackgroundColor [UIColor colorWithRed:0.917 green:0.927 blue:0.917 alpha:1.000]
 #define MainTitleFont [UIFont systemFontOfSize:16.0f]
 #define MainTitleNormalColor [UIColor colorWithWhite:0.407 alpha:1.000]
 #define MainTitleSelectColor [UIColor colorWithRed:0.389 green:0.670 blue:0.265 alpha:1.000]
 #define MainTitleBottomLineHeight 3
+#define MainTitleBottomLineColor [UIColor colorWithRed:0.393 green:0.665 blue:0.265 alpha:1.000]
 
 
 @interface TPLScrollShowView ()<UIScrollViewDelegate>
@@ -75,19 +209,68 @@
     _viewsControllerArray = viewsControllerArray;
     [self refreshViews];
 }
+-(void)setTitleFont:(UIFont *)titleFont
+{
+    _titleFont = titleFont;
+    [self refreshViews];
+}
+-(void)setTitleNormalColor:(UIColor *)titleNormalColor
+{
+    _titleNormalColor = titleNormalColor;
+    [self refreshViews];
+}
+-(void)setTitleSelectColor:(UIColor *)titleSelectColor
+{
+    _titleSelectColor = titleSelectColor;
+    [self refreshViews];
+}
+
+-(void)setTitleBottomLineHeight:(CGFloat)titleBottomLineHeight
+{
+    _titleBottomLineHeight = titleBottomLineHeight;
+    [self refreshViews];
+}
+-(void)setTitleBottomLineColor:(UIColor *)titleBottomLineColor
+{
+    _titleBottomLineColor = titleBottomLineColor;
+    [self refreshViews];
+}
+-(void)setTitlesBackgroundColor:(UIColor *)titlesBackgroundColor
+{
+    _titlesBackgroundColor = titlesBackgroundColor;
+    _titleScrollView.backgroundColor = _titlesBackgroundColor;
+}
 
 
+
+
+
+
+#pragma mark
+#pragma mark           init
+#pragma mark
+-(void)initBaseData
+{
+    _titleFont = MainTitleFont;
+    _titleNormalColor = MainTitleNormalColor;
+    _titleSelectColor = MainTitleSelectColor;
+    _titleBottomLineHeight = MainTitleBottomLineHeight;
+    _titleBottomLineColor = MainTitleBottomLineColor;
+    _titlesBackgroundColor = TitlesBackgroundColor;
+    
+    _titleLabelsArray = [[NSMutableArray alloc] initWithCapacity:0];
+    _currentVC = 0;
+
+}
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
     if (self) {
         // Initialization code
-        
         //data init
-        _titleLabelsArray = [[NSMutableArray alloc] initWithCapacity:0];
-        
+        [self initBaseData];
+
         //help value init
-        _currentVC = 0;
         
         //init view
         [self refreshViews];
@@ -119,7 +302,7 @@
     if(!_titleScrollView)
     {
         _titleScrollView = [[TPLAutoChangeView alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, _titleHeight)];
-        _titleScrollView.backgroundColor = [UIColor colorWithRed:0.917 green:0.927 blue:0.917 alpha:1.000];
+        _titleScrollView.backgroundColor = _titlesBackgroundColor;
         _titleScrollView.showsHorizontalScrollIndicator = NO;;
         [self addSubview:_titleScrollView];
     }
@@ -140,15 +323,17 @@
     int i = 0;
     for (NSString * title in _titleArray)
     {
-        CGFloat width = [TPLHelpTool lengthOfString:title withFont:MainTitleFont];
+//        CGFloat width = [TPLHelpTool lengthOfString:title withFont:_titleFont];
+        CGFloat width = [TPLScrollShowView lengthOfString:title withFont:_titleFont];
+
         width = width + title_xSpace_default;
         UILabel * titleLabel = [[UILabel alloc] init];
         titleLabel.frame = CGRectMake(x, 0, width, _titleHeight);
-        titleLabel.font = MainTitleFont;
+        titleLabel.font = _titleFont;
         titleLabel.textAlignment = NSTextAlignmentCenter;
         titleLabel.text = title;
         titleLabel.userInteractionEnabled = YES;
-        titleLabel.textColor = MainTitleNormalColor;
+        titleLabel.textColor = _titleNormalColor;
         UITapGestureRecognizer * tapOne = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(titleClicked:)];
         tapOne.numberOfTapsRequired = 1;
         [titleLabel addGestureRecognizer:tapOne];
@@ -211,18 +396,18 @@
         if (scrollView.contentOffset.x > (_currentVC*scrollView.frame.size.width + scrollView.frame.size.width) && (scrollView.contentOffset.x + scrollView.frame.size.width) < scrollView.contentSize.width)
         {
             UILabel * tempLabel = [_titleLabelsArray objectAtIndex:_currentVC];
-            tempLabel.textColor = MainTitleNormalColor;
+            tempLabel.textColor = _titleNormalColor;
             _currentVC++;
             UILabel * nowLabel = [_titleLabelsArray objectAtIndex:_currentVC];
-            nowLabel.textColor = MainTitleSelectColor;
+            nowLabel.textColor = _titleSelectColor;
         }
         else if (scrollView.contentOffset.x > 0 && (scrollView.contentOffset.x + scrollView.frame.size.width) < _currentVC*self.frame.size.width)
         {
             UILabel * tempLabel = [_titleLabelsArray objectAtIndex:_currentVC];
-            tempLabel.textColor = MainTitleNormalColor;
+            tempLabel.textColor = _titleNormalColor;
             _currentVC--;
             UILabel * nowLabel = [_titleLabelsArray objectAtIndex:_currentVC];
-            nowLabel.textColor = MainTitleSelectColor;
+            nowLabel.textColor = _titleSelectColor;
         }
 
         
@@ -270,7 +455,7 @@
     if (_currentVC != count)
     {
         UILabel * previousTitleLabel = [_titleLabelsArray objectAtIndex:_currentVC];
-        previousTitleLabel.textColor = MainTitleNormalColor;
+        previousTitleLabel.textColor = _titleNormalColor;
         _currentVC = count;
     }
     [self fitContentOffsetForCurrentVCAnimation:YES];
@@ -306,15 +491,15 @@
     _isClicked = YES;
     //之前的标题
     UILabel * previousTitleLabel = [_titleLabelsArray objectAtIndex:_currentVC];
-    previousTitleLabel.textColor = MainTitleNormalColor;
+    previousTitleLabel.textColor = _titleNormalColor;
     
     
     _currentVC = tap.view.tag - 1000;
     UILabel * currentTitleLabel = [_titleLabelsArray objectAtIndex:_currentVC];
-    currentTitleLabel.textColor = MainTitleSelectColor;
+    currentTitleLabel.textColor = _titleSelectColor;
     typeof(self) __weak weak_self = self;
     [UIView animateWithDuration:0.2 animations:^{
-        _titleBottomLine.frame = CGRectMake(currentTitleLabel.frame.origin.x, _titleHeight - MainTitleBottomLineHeight, currentTitleLabel.frame.size.width, MainTitleBottomLineHeight);
+        _titleBottomLine.frame = CGRectMake(currentTitleLabel.frame.origin.x, _titleHeight - _titleBottomLineHeight, currentTitleLabel.frame.size.width, _titleBottomLineHeight);
     } completion:^(BOOL finish){
         typeof(weak_self) __strong strong_self = weak_self;
         if (strong_self)
@@ -392,7 +577,7 @@
     if (!_titleBottomLine)
     {
         _titleBottomLine = [[UIImageView alloc] init];
-        _titleBottomLine.backgroundColor = [UIColor colorWithRed:0.393 green:0.665 blue:0.265 alpha:1.000];
+        _titleBottomLine.backgroundColor = _titleBottomLineColor;
         [_titleScrollView addSubview:_titleBottomLine];
     }
     
@@ -400,8 +585,8 @@
     if (_titleLabelsArray.count > 0)
     {
         UILabel * titleLabel = [_titleLabelsArray objectAtIndex:_currentVC];
-        titleLabel.textColor = MainTitleSelectColor;
-        _titleBottomLine.frame = CGRectMake(titleLabel.frame.origin.x, _titleHeight - 3, titleLabel.frame.size.width, 3);
+        titleLabel.textColor = _titleSelectColor;
+        _titleBottomLine.frame = CGRectMake(titleLabel.frame.origin.x, _titleHeight - _titleBottomLineHeight, titleLabel.frame.size.width, _titleBottomLineHeight);
     }
     
     //当前视图
@@ -422,6 +607,35 @@
 }
 
 
+//获得字符串长度
+#define MORE_WIDTH 0
++(CGFloat)lengthOfString:(NSString*)string withFont:(UIFont*)font
+{
+//    NSString * systemString = [TPLHelpTool getSystemVersion];
+    NSString * systemString = [TPLScrollShowView getSystemVersion];
+
+    CGSize size;
+    if ([systemString intValue] >= 7)
+    {
+        size = [string sizeWithAttributes:[NSDictionary dictionaryWithObject:font forKey:NSFontAttributeName]];
+    }
+    else
+    {
+        size = [string sizeWithFont:font];
+    }
+    
+    return size.width + MORE_WIDTH;
+}
+
+//获得操作系统版本号
++(NSString *)getSystemVersion
+{
+    return  [[UIDevice currentDevice] systemVersion];
+}
+
+
+
+
 #pragma mark
 #pragma mark           publich function
 #pragma mark
@@ -433,16 +647,16 @@
         _isClicked = YES;
         //之前的标题
         UILabel * previousTitleLabel = [_titleLabelsArray objectAtIndex:_currentVC];
-        previousTitleLabel.textColor = MainTitleNormalColor;
+        previousTitleLabel.textColor = _titleNormalColor;
         
         
         _currentVC = index;
         UILabel * currentTitleLabel = [_titleLabelsArray objectAtIndex:_currentVC];
-        currentTitleLabel.textColor = MainTitleSelectColor;
+        currentTitleLabel.textColor = _titleSelectColor;
         CGFloat animationDuration = animation ? 0.2f : 0;
         typeof(self) __weak weak_self = self;
         [UIView animateWithDuration:animationDuration animations:^{
-            _titleBottomLine.frame = CGRectMake(currentTitleLabel.frame.origin.x, _titleHeight - MainTitleBottomLineHeight, currentTitleLabel.frame.size.width, MainTitleBottomLineHeight);
+            _titleBottomLine.frame = CGRectMake(currentTitleLabel.frame.origin.x, _titleHeight - _titleBottomLineHeight, currentTitleLabel.frame.size.width, _titleBottomLineHeight);
         } completion:^(BOOL finish){
             typeof(weak_self) __strong strong_self = weak_self;
             if (strong_self)

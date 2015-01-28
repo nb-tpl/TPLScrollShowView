@@ -22,8 +22,6 @@
 		3B3C12A31A64D7C200E767CF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B3C12821A64D7C200E767CF /* UIKit.framework */; };
 		3B3C12AB1A64D7C200E767CF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3B3C12A91A64D7C200E767CF /* InfoPlist.strings */; };
 		3B3C12AD1A64D7C200E767CF /* ____Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B3C12AC1A64D7C200E767CF /* ____Tests.m */; };
-		3B50C7A01A6FAEEB00D80E20 /* TPLAutoChangeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B50C79B1A6FAEEB00D80E20 /* TPLAutoChangeView.m */; };
-		3B50C7A11A6FAEEB00D80E20 /* TPLHelpTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B50C79D1A6FAEEB00D80E20 /* TPLHelpTool.m */; };
 		3B50C7A21A6FAEEB00D80E20 /* TPLScrollShowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B50C79F1A6FAEEB00D80E20 /* TPLScrollShowView.m */; };
 /* End PBXBuildFile section */
 
@@ -58,10 +56,6 @@
 		3B3C12A81A64D7C200E767CF /* 滚动导航Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "滚动导航Tests-Info.plist"; sourceTree = "<group>"; };
 		3B3C12AA1A64D7C200E767CF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		3B3C12AC1A64D7C200E767CF /* ____Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "____Tests.m"; sourceTree = "<group>"; };
-		3B50C79A1A6FAEEB00D80E20 /* TPLAutoChangeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPLAutoChangeView.h; sourceTree = "<group>"; };
-		3B50C79B1A6FAEEB00D80E20 /* TPLAutoChangeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPLAutoChangeView.m; sourceTree = "<group>"; };
-		3B50C79C1A6FAEEB00D80E20 /* TPLHelpTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPLHelpTool.h; sourceTree = "<group>"; };
-		3B50C79D1A6FAEEB00D80E20 /* TPLHelpTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPLHelpTool.m; sourceTree = "<group>"; };
 		3B50C79E1A6FAEEB00D80E20 /* TPLScrollShowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPLScrollShowView.h; sourceTree = "<group>"; };
 		3B50C79F1A6FAEEB00D80E20 /* TPLScrollShowView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPLScrollShowView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -168,10 +162,6 @@
 		3B50C7991A6FAEEB00D80E20 /* TPLScrollShowView */ = {
 			isa = PBXGroup;
 			children = (
-				3B50C79A1A6FAEEB00D80E20 /* TPLAutoChangeView.h */,
-				3B50C79B1A6FAEEB00D80E20 /* TPLAutoChangeView.m */,
-				3B50C79C1A6FAEEB00D80E20 /* TPLHelpTool.h */,
-				3B50C79D1A6FAEEB00D80E20 /* TPLHelpTool.m */,
 				3B50C79E1A6FAEEB00D80E20 /* TPLScrollShowView.h */,
 				3B50C79F1A6FAEEB00D80E20 /* TPLScrollShowView.m */,
 			);
@@ -276,10 +266,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3B50C7A01A6FAEEB00D80E20 /* TPLAutoChangeView.m in Sources */,
 				3B3C12981A64D7C200E767CF /* ViewController.m in Sources */,
 				3B3C128F1A64D7C200E767CF /* AppDelegate.m in Sources */,
-				3B50C7A11A6FAEEB00D80E20 /* TPLHelpTool.m in Sources */,
 				3B3C128B1A64D7C200E767CF /* main.m in Sources */,
 				3B50C7A21A6FAEEB00D80E20 /* TPLScrollShowView.m in Sources */,
 			);
