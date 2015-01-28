@@ -44,13 +44,13 @@
     _scrollShowView.titleHeight = 35;
     _scrollShowView.titleArray = [@[@"首页",@"宝妈攻略",@"排行榜",@"商品预警",@"分类"] mutableCopy];
     
-    //参数设定
-    _scrollShowView.titlesBackgroundColor = [UIColor blackColor];
-    _scrollShowView.titleBottomLineColor = [UIColor redColor];
-    _scrollShowView.titleBottomLineHeight = 10;
-    _scrollShowView.titleFont = [UIFont systemFontOfSize:20];
-    _scrollShowView.titleNormalColor = [UIColor greenColor];
-    _scrollShowView.titleSelectColor = [UIColor redColor];
+//    //参数设定
+//    _scrollShowView.titlesBackgroundColor = [UIColor blackColor];
+//    _scrollShowView.titleBottomLineColor = [UIColor redColor];
+//    _scrollShowView.titleBottomLineHeight = 10;
+//    _scrollShowView.titleFont = [UIFont systemFontOfSize:20];
+//    _scrollShowView.titleNormalColor = [UIColor greenColor];
+//    _scrollShowView.titleSelectColor = [UIColor redColor];
 
     
     NSMutableArray * vcArray = [[NSMutableArray alloc] initWithCapacity:0];

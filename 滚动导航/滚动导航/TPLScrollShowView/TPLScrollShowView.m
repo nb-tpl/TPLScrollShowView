@@ -233,7 +233,7 @@
 -(void)setTitleBottomLineColor:(UIColor *)titleBottomLineColor
 {
     _titleBottomLineColor = titleBottomLineColor;
-    [self refreshViews];
+    _titleBottomLine.backgroundColor = _titleBottomLineColor;
 }
 -(void)setTitlesBackgroundColor:(UIColor *)titlesBackgroundColor
 {
