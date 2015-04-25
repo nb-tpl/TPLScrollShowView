@@ -146,7 +146,7 @@
 #pragma mark           TPLScrollShowView
 #pragma mark
 
-#define title_xSpace_default 10
+#define title_xSpace_default 20
 #define dealocInfo NSLog(@"%@ 释放了",[self class])
 
 //mainView
@@ -251,6 +251,9 @@
 #pragma mark
 -(void)initBaseData
 {
+    _titleXPaddin = 10;
+    _titleXSpace = title_xSpace_default;
+    _titleWidth = 0;
     _titleFont = MainTitleFont;
     _titleNormalColor = MainTitleNormalColor;
     _titleSelectColor = MainTitleSelectColor;
@@ -319,14 +322,18 @@
     [_titleLabelsArray removeAllObjects];
     
     
-    CGFloat x = 10;
+    CGFloat x = _titleXPaddin;
     int i = 0;
     for (NSString * title in _titleArray)
     {
 //        CGFloat width = [TPLHelpTool lengthOfString:title withFont:_titleFont];
         CGFloat width = [TPLScrollShowView lengthOfString:title withFont:_titleFont];
 
-        width = width + title_xSpace_default;
+        width = width;
+        if (_titleWidth != 0)
+        {
+            width = _titleWidth;
+        }
         UILabel * titleLabel = [[UILabel alloc] init];
         titleLabel.frame = CGRectMake(x, 0, width, _titleHeight);
         titleLabel.font = _titleFont;
@@ -343,10 +350,10 @@
         [_titleLabelsArray addObject:titleLabel];
         
         i++;
-        x = x + width + 10;
+        x = x + width + _titleXSpace;
     }
     //调整下
-    _titleScrollView.contentSize = CGSizeMake(_titleScrollView.contentSize.width+10, _titleScrollView.contentSize.height);
+    _titleScrollView.contentSize = CGSizeMake(_titleScrollView.contentSize.width+ _titleXPaddin, _titleScrollView.contentSize.height);
 }
 
 //展示视图
@@ -493,7 +500,7 @@
     UILabel * previousTitleLabel = [_titleLabelsArray objectAtIndex:_currentVC];
     previousTitleLabel.textColor = _titleNormalColor;
     
-    
+    BOOL animation = abs((int)_currentVC - (int)(tap.view.tag - 1000)) == 1 ? YES:NO;
     _currentVC = tap.view.tag - 1000;
     UILabel * currentTitleLabel = [_titleLabelsArray objectAtIndex:_currentVC];
     currentTitleLabel.textColor = _titleSelectColor;
@@ -504,7 +511,7 @@
         typeof(weak_self) __strong strong_self = weak_self;
         if (strong_self)
         {
-            [strong_self fitContentOffsetForCurrentVCAnimation:YES];
+            [strong_self fitContentOffsetForCurrentVCAnimation:animation];
         }
     }];
 }

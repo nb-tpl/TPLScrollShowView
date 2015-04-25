@@ -45,6 +45,16 @@
 
 @interface TPLScrollShowView : UIView
 
+
+//左边距
+@property(nonatomic,assign)CGFloat titleXPaddin;
+//间距
+@property(nonatomic,assign)CGFloat titleXSpace;
+//默认宽度，如果设定就按默认宽度来，没设定就按标题长度来
+@property(nonatomic,assign)CGFloat titleWidth;
+
+
+
 //标题文字数组
 @property(nonatomic,strong)NSMutableArray * titleArray;
 //标题的背景颜色
