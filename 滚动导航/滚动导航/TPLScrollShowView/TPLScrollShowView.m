@@ -606,11 +606,27 @@
             [_viewsVCScrollView addSubview:vc.view];
             [vc viewDidAppear:YES];
         }
+        
         [_viewsVCScrollView setContentOffset:CGPointMake(_currentVC*self.frame.size.width, 0) animated:animation];
+        if (animation)
+        {
+        }
+        else
+        {
+            [vc viewDidAppear:animation];
+        }
+        [self scrollToIndex:(int)_currentVC];
 
 //        [vc viewDidAppear:YES];改为动画结束后调用
     }
-    
+}
+
+-(void)scrollToIndex:(int)index
+{
+    if (_scrollToIndex)
+    {
+        _scrollToIndex(index);
+    }
 }
 
 

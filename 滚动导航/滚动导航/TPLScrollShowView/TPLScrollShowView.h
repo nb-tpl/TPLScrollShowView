@@ -77,6 +77,8 @@
 
 //滑动到顶端,0为左边，1为右边
 @property(nonatomic,strong)void (^scrollToEnd)(int endStyle);
+//展示第几个视图的Block
+@property(nonatomic,strong)void (^scrollToIndex)(int index);
 
 
 //运动到第几个页面
